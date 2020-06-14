@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Broken Formality - Release</title>
+      <meta author="Amaury Obadia" content="behance: amauryobadia">
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=Work Sans:800&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+      <script type="text/javascript" src="circle.js"></script>
+
+</head>
+<body>
+
+      <div class="wrapper">
+            <div class="bf-section">   
+                  <div class="nav">
+                        <div class="logo"><a href= "index.html"> Broken Formality </a></div>
+                        <div class="raffle"><a href= "Raffle.html"> Enter Raffle </a></div>
+                  </div>
+                  
+                  <div class="Travis-gif"></div>
+
+                  <div class="bf-title">
+                        <h1 class="glitch" data-text="Travis Scott">Travis Scott</h1>
+                        <p>Air Jordan 1 High</p>
+                  </div>
+
+                  <div class="rotatethis">
+                        <h2 id="rotated">  • Cactus Jack • Cactus Jack • Cactus Jack </h2>
+                  </div>
+
+                  <div class="social-media">
+                        <ul>
+                              <a href= "https://www.behance.net/amauryobadia">behance</a>
+                              <a href= "https://www.instagram.com/amauryobd">instagram</a>
+                        </ul>
+                  </div>
+
+            </div>
+
+            <div class="gif-overlay"></div>
+      </div>
+
+<script>
+      
+      const circleType = new CircleType(document.getElementById('rotated'));   
+
+
+      TweenMax.from(".rotatethis", 2, {
+      delay: 6,
+      opacity: 0,
+      ease: Expo.easeInOut
+      });
+
+      TweenMax.staggerFrom(".social-media ul a", 2, {
+      delay: 5.7,
+      opacity: 0,
+      y: 20,
+      ease: Expo.easeInOut
+      }, 0.1);
+
+      TweenMax.staggerFrom("audio", 2, {
+      delay: 5.9,
+      opacity: 0,
+      y: 20,
+      ease: Expo.easeInOut
+      }, 0.1);  
+
+      TweenLite.fromTo(".bf-title h1", 0.3, {
+            x:-6,
+            y:2,
+            opacity: 0,
+      }, 
+      {
+            delay: 5,
+            x: 6,
+            y: -2,
+            opacity: 1,
+            ease:RoughEase.ease.config({
+                  strength:8,
+                  points:40, 
+                  template:Linear.easeNone, 
+                  randomize:false}),
+            clearProps:"all"
+      });
+
+      TweenLite.fromTo(".bf-title p", 0.3, {
+            x:-6,
+            y:2,
+            opacity: 0,
+      }, 
+      {
+            delay: 9,
+            x: 6,
+            y: -2,
+            opacity: 1,
+            ease:RoughEase.ease.config({
+                  strength:8,
+                  points:40, 
+                  template:Linear.easeNone, 
+                  randomize:false}),
+            clearProps:"all"
+      });
+
+</script>
+</body>
+</html>
